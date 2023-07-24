@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_1"
+        android:orientation="vertical"
+        android:padding="@dimen/mini_spacing"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mini_spacing"
+            android:text="@string/album"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/albumTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/semi_white"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintStart_toStartOf="@id/album"
+            app:layout_constraintTop_toBottomOf="@id/album"
+            tools:text="One More Night Live" />
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/singer"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintStart_toStartOf="@id/album"
+            app:layout_constraintTop_toBottomOf="@id/albumTitle" />
+
+        <TextView
+            android:id="@+id/artistTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/mini_spacing"
+            android:textColor="@color/semi_white"
+            android:textSize="@dimen/text_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/artist"
+            app:layout_constraintStart_toEndOf="@id/artist"
+            tools:text="Linkin Park" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="@dimen/text_18"
+            app:layout_constraintStart_toStartOf="@id/album"
+            app:layout_constraintTop_toBottomOf="@id/artist"
+            tools:text="2017" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/common_spacing"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintBottom_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/year"
+            tools:text="Альтернатива" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textPanel" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trackPanel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/grey_2"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/buttonPanel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textPanel"
+        tools:listitem="@layout/item_music" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="seekBarPanel" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seekBarPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_3"
+        android:paddingHorizontal="@dimen/mini_spacing"
+        app:layout_constraintBottom_toTopOf="@id/buttonPanel"
+        app:layout_constraintTop_toBottomOf="@id/trackPanel">
+
+        <TextView
+            android:id="@+id/timeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/semi_white"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="0:00" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/mini_spacing"
+            android:progressBackgroundTint="@color/semi_white"
+            android:progressTint="@color/orange_button"
+            android:thumbTint="@color/orange_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/timeEnd"
+            app:layout_constraintStart_toEndOf="@id/timeStart" />
+
+        <TextView
+            android:id="@+id/timeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/semi_white"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/seekBar"
+            tools:text="9:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_3"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBarPanel">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonPrev"
+            style="@style/FloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/mini_spacing"
+            android:contentDescription="@string/button_next"
+            app:fabSize="mini"
+            app:maxImageSize="@dimen/button_size_mini"
+            app:srcCompat="@drawable/baseline_skip_previous_48" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonPlay"
+            style="@style/FloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/common_spacing"
+            android:layout_marginBottom="@dimen/common_spacing"
+
+            android:contentDescription="@string/button_play"
+            app:maxImageSize="@dimen/button_size"
+            app:srcCompat="@drawable/baseline_play_arrow_48" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonNext"
+            style="@style/FloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/mini_spacing"
+            android:contentDescription="@string/button_next"
+            app:fabSize="mini"
+            app:maxImageSize="@dimen/button_size_mini"
+            app:srcCompat="@drawable/baseline_skip_next_48" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

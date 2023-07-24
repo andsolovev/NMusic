@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingHorizontal="10dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="#B1F8551C"
+        app:borderWidth="0dp"
+        app:fabCustomSize="28dp"
+        app:srcCompat="@drawable/baseline_play_arrow_48"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/button_play"/>
+
+    <TextView
+        android:id="@+id/listTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/playButton"
+        app:layout_constraintTop_toTopOf="@id/playButton"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        android:textSize="18sp"
+        android:textColor="@color/semi_white"
+        tools:text="Название песни"/>
+
+    <TextView
+        android:id="@+id/listArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/listTitle"
+        app:layout_constraintBottom_toBottomOf="@id/listTitle"
+        android:paddingHorizontal="6dp"
+        android:textSize="16sp"
+        tools:text="Исполнитель"/>
+
+    <TextView
+        android:id="@+id/listTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/listTitle"
+        android:textSize="16sp"
+        tools:text="04:25"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
