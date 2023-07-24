@@ -20,14 +20,14 @@ class TrackViewModel : ViewModel() {
         nowPlaying.value = 1
     }
 
-    fun getAlbum() {
+    private fun getAlbum() {
         MusicApi.musicApiService.getAlbum(object : MusicCallback<Album> {
             override fun onSuccess(data: Album) {
                 _data.postValue(data)
             }
 
             override fun onError(e: Exception) {
-                throw Exception(e)
+               throw Exception(e)
             }
         })
     }
@@ -50,11 +50,7 @@ class TrackViewModel : ViewModel() {
         _data.value = data.value?.let { album ->
             album.copy(tracks = album.tracks.map { track ->
                 if (id == track.id) {
-                    track.copy(
-                        isPlaying = !track.isPlaying,
-                        isPaused = !track.isPaused,
-                        isSelected = true
-                    )
+                    track.copy(isPlaying = !track.isPlaying, isPaused = !track.isPaused, isSelected = true)
                 } else {
                     track.copy(isPlaying = false, isPaused = false, isSelected = false)
                 }

@@ -2,7 +2,8 @@
     <string name="app_name">NMusic</string>
     <string name="button_next">Button Next</string>
     <string name="button_play">Button Play</string>
-    <string name="album">АЛЬБОМ</string>
-    <string name="singer">Исполнитель:</string>
+    <string name="album">ALBUM</string>
+    <string name="artist">Artist:</string>
     <string name="track">Track %1$s</string>
+    <string name="button_prev">Button Previous</string>
 </resources>

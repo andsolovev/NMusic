@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:paddingHorizontal="10dp">
+    android:paddingHorizontal="@dimen/mini_spacing">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/playButton"
@@ -16,7 +16,7 @@
         android:focusable="true"
         android:backgroundTint="#B1F8551C"
         app:borderWidth="0dp"
-        app:fabCustomSize="28dp"
+        app:fabCustomSize="@dimen/button_size_micro"
         app:srcCompat="@drawable/baseline_play_arrow_48"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toEndOf="@id/playButton"
         app:layout_constraintTop_toTopOf="@id/playButton"
         app:layout_constraintBottom_toBottomOf="@id/playButton"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_18"
         android:textColor="@color/semi_white"
         tools:text="Название песни"/>
 
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/listTitle"
         app:layout_constraintBottom_toBottomOf="@id/listTitle"
-        android:paddingHorizontal="6dp"
-        android:textSize="16sp"
+        android:paddingHorizontal="@dimen/mini_spacing"
+        android:textSize="@dimen/text_16"
         tools:text="Исполнитель"/>
 
     <TextView
@@ -49,9 +49,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/listTitle"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_16"
         tools:text="04:25"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <dimen name="text_16">16sp</dimen>
     <dimen name="text_18">18sp</dimen>
     <dimen name="text_24">24sp</dimen>
+    <dimen name="button_size_micro">28dp</dimen>
     <dimen name="button_size_mini">36dp</dimen>
     <dimen name="button_size">48dp</dimen>
 </resources>

@@ -17,7 +17,7 @@ interface MusicCallback<T> {
     fun onError(e: java.lang.Exception)
 }
 
-class MusicApiService() {
+class MusicApiService {
     private val logging = HttpLoggingInterceptor().apply {
         if (BuildConfig.DEBUG) {
             level = HttpLoggingInterceptor.Level.BODY

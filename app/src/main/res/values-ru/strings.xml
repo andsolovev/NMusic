@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NMusic</string>
+    <string name="button_next">Кнопка Следующий</string>
+    <string name="button_play">Кнопка Плей</string>
+    <string name="album">АЛЬБОМ</string>
+    <string name="artist">Исполнитель:</string>
+    <string name="track">Трек %1$s</string>
+    <string name="button_prev">Кнопка Предыдущий</string>
+</resources>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="button_next">Button Next</string>
-    <string name="button_play">Button Play</string>
-    <string name="album">Альбом</string>
-    <string name="singer">Исполнитель</string>
-</resources>
