@@ -4,4 +4,4 @@ A simple music player that plays a music album from the Internet.
 
 Stack: MVVM, Kotlin, OkHttp3, GSON
 
-![Screenshot](screenshots/screenshot1.png)
+![Screenshot](screenshots/screenshot.png)
